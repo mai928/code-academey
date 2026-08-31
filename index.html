@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeAcademy — Learn to Code</title>
+    <meta
+      name="description"
+      content="A modern platform to learn programming through paths, flashcards, practice, quizzes, and certificates."
+    />
+    <script>
+      // Applied before first paint to avoid a flash of the wrong theme.
+      (function () {
+        try {
+          var theme = JSON.parse(localStorage.getItem('cap_theme')) || 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/themes.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <a href="#mainContent" class="cap-skip-link">Skip to main content</a>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg cap-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><i class="fa-solid fa-code" aria-hidden="true"></i> CodeAcademy</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="curriculum.html">Curriculum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="languages.html">Languages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="compiler.html">Compiler</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="practice.html">Practice</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="quiz.html">Quizzes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="resources.html">Resources</a>
+            </li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <button
+                class="cap-theme-toggle"
+                type="button"
+                data-theme-toggle
+                aria-label="Toggle dark mode"
+              >
+                <i
+                  class="fa-solid fa-moon"
+                  data-theme-icon
+                  aria-hidden="true"
+                ></i>
+                <span data-theme-label>Dark mode</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="mainContent">
+      <!-- Hero -->
+      <section class="cap-hero">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <p class="cap-hero-eyebrow">Learn by building</p>
+              <h1 class="mb-3">
+                <span id="typedHeadline" class="cap-hero-typed"
+                  >Learn to Code.</span
+                >
+              </h1>
+              <p class="cap-hero-desc mb-4">
+                Explore programming paths, study with interactive flashcards,
+                practice leveled challenges, and earn a certificate when you're
+                ready.
+              </p>
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                <a href="curriculum.html" class="btn cap-btn-primary"
+                  >Start learning</a
+                >
+                <a href="practice.html" class="btn cap-btn-outline"
+                  >Try a challenge</a
+                >
+              </div>
+
+              <div class="cap-search-wrapper" style="max-width: 480px">
+                <label for="homeSearchInput" class="form-label small cap-muted"
+                  >Search courses, languages & resources</label
+                >
+                <input
+                  type="search"
+                  id="homeSearchInput"
+                  class="form-control"
+                  placeholder="Try 'Python' or 'joins'..."
+                  autocomplete="off"
+                />
+                <div
+                  id="homeSearchResults"
+                  class="cap-search-results d-none"
+                ></div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="cap-code-mock">
+                <div class="cap-code-mock-header">
+                  <span
+                    class="cap-code-mock-dot"
+                    style="background: #ff5f57"
+                  ></span>
+                  <span
+                    class="cap-code-mock-dot"
+                    style="background: #febc2e"
+                  ></span>
+                  <span
+                    class="cap-code-mock-dot"
+                    style="background: #28c840"
+                  ></span>
+                </div>
+                <div class="cap-code-mock-body">
+                  <span class="kw">def</span>
+                  <span class="fn">greet</span>(name):
+                  <span class="kw">return</span>
+                  <span class="str">f"Hello, {name}!"</span>
+
+                  <span class="fn">print</span>(greet(<span class="str"
+                    >"future developer"</span
+                  >))
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick learning portals -->
+      <section class="py-5">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-end mb-4">
+            <div>
+              <h2 class="h3 mb-1">Quick learning portals</h2>
+              <p class="cap-muted mb-0">Jump straight into a language.</p>
+            </div>
+          </div>
+          <div class="row g-4" id="portalGrid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="cap-footer">
+      <div class="container d-flex flex-wrap justify-content-between gap-2">
+        <span>© 2026 CodeAcademy</span>
+        <span class="cap-muted">A front-end learning platform prototype.</span>
+      </div>
+    </footer>
+
+    <div
+      id="capToastContainer"
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+      style="z-index: 1080"
+    ></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script type="module">
+      import { initNavbar } from './js/ui/navbar.js';
+      import { initTheme } from './js/ui/theme.js';
+      import { initHomePage } from './js/pages/home.js';
+
+      initNavbar();
+      initTheme();
+      initHomePage();
+    </script>
+  </body>
+</html>

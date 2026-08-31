@@ -1,0 +1,68 @@
+/* responsive.css
+   Breakpoint-specific adjustments. Bootstrap's grid handles most layout;
+   these rules cover the custom components (hero, flashcards, editor,
+   certificate) that need extra tuning at small sizes. */
+
+/* ≤375px: tightest phones */
+@media (max-width: 375px) {
+  .cap-hero h1 {
+    font-size: 1.8rem;
+  }
+  .cap-cert-name {
+    font-size: 1.2rem;
+  }
+  .cap-flashcard {
+    height: 200px;
+  }
+}
+
+/* ≤425px */
+@media (max-width: 425px) {
+  .cap-code-mock-body {
+    font-size: 0.75rem;
+  }
+  .cap-cert-meta {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}
+
+/* < 576px: stack nav search full width, single column grids handled by Bootstrap col classes already */
+@media (max-width: 575.98px) {
+  .cap-search-results {
+    left: 0;
+    right: 0;
+  }
+  .cap-hero {
+    text-align: center;
+  }
+  .cap-hero-desc {
+    margin-inline: auto;
+  }
+}
+
+/* ≤768px: tablets — editor panels stack, already col-12 in markup, just size tweaks */
+@media (max-width: 768px) {
+  .cap-editor-preview {
+    min-height: 280px;
+  }
+  .cap-flashcard {
+    height: 200px;
+  }
+}
+
+/* Ensure no component forces horizontal scroll on any width */
+html, body {
+  overflow-x: hidden;
+}
+
+img, svg, iframe, textarea {
+  max-width: 100%;
+}
+
+/* Large screens: cap content width for readability of hero/description text */
+@media (min-width: 1440px) {
+  .cap-hero-desc {
+    max-width: 52ch;
+  }
+}

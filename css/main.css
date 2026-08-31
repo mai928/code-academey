@@ -1,0 +1,490 @@
+/* main.css
+   Global design system for CodeAcademy Pro. Component styles live here;
+   breakpoint-specific overrides live in responsive.css; color tokens live
+   in themes.css. */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cap-bg);
+  color: var(--cap-text);
+  font-family: var(--cap-font-body);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--cap-font-display);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--cap-accent);
+}
+
+.cap-muted {
+  color: var(--cap-text-dim);
+}
+
+.cap-text-success { color: var(--cap-success) !important; }
+.cap-text-danger { color: var(--cap-danger) !important; }
+
+/* ---------- Skip link / focus ---------- */
+.cap-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--cap-accent);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  z-index: 2000;
+  border-radius: 0 0 8px 0;
+}
+.cap-skip-link:focus {
+  left: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--cap-accent-2);
+  outline-offset: 2px;
+}
+
+/* ---------- Navbar ---------- */
+.cap-navbar {
+  background: var(--cap-surface);
+  border-bottom: 1px solid var(--cap-border);
+  padding-block: 0.75rem;
+}
+
+.cap-navbar .navbar-brand {
+  font-family: var(--cap-font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--cap-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cap-navbar .navbar-brand i {
+  color: var(--cap-accent);
+}
+
+.cap-navbar .nav-link {
+  color: var(--cap-text-dim);
+  font-weight: 500;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: 8px;
+}
+
+.cap-navbar .nav-link:hover {
+  color: var(--cap-text);
+  background: var(--cap-surface-alt);
+}
+
+.cap-navbar .nav-link.active {
+  color: var(--cap-accent);
+  background: var(--cap-surface-alt);
+  font-weight: 600;
+}
+
+.cap-theme-toggle {
+  border: 1px solid var(--cap-border);
+  background: var(--cap-surface-alt);
+  color: var(--cap-text);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+/* ---------- Hero ---------- */
+.cap-hero {
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+
+.cap-hero-eyebrow {
+  font-family: var(--cap-font-mono);
+  color: var(--cap-accent-2);
+  font-size: 0.85rem;
+}
+
+.cap-hero h1 {
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  line-height: 1.1;
+}
+
+.cap-hero-typed {
+  color: var(--cap-accent);
+}
+
+.cap-hero-desc {
+  color: var(--cap-text-dim);
+  max-width: 46ch;
+  font-size: 1.05rem;
+}
+
+.cap-code-mock {
+  background: var(--cap-surface);
+  border: 1px solid var(--cap-border);
+  border-radius: var(--cap-radius);
+  box-shadow: var(--cap-shadow);
+  font-family: var(--cap-font-mono);
+  font-size: 0.85rem;
+  overflow: hidden;
+}
+
+.cap-code-mock-header {
+  background: var(--cap-surface-alt);
+  padding: 0.6rem 1rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.cap-code-mock-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.cap-code-mock-body {
+  padding: 1.25rem;
+  white-space: pre;
+  overflow-x: auto;
+  color: var(--cap-text-dim);
+}
+
+.cap-code-mock-body .kw { color: var(--cap-accent); }
+.cap-code-mock-body .fn { color: var(--cap-accent-2); }
+.cap-code-mock-body .str { color: var(--cap-success); }
+
+/* ---------- Buttons ---------- */
+.cap-btn-primary {
+  background: var(--cap-accent);
+  border: 1px solid var(--cap-accent);
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0.55rem 1.2rem;
+}
+.cap-btn-primary:hover {
+  background: var(--cap-accent-dark);
+  border-color: var(--cap-accent-dark);
+  color: #fff;
+}
+
+.cap-btn-outline {
+  background: transparent;
+  border: 1px solid var(--cap-border);
+  color: var(--cap-text);
+  border-radius: 10px;
+  font-weight: 500;
+}
+.cap-btn-outline:hover {
+  border-color: var(--cap-accent);
+  color: var(--cap-accent);
+}
+
+/* ---------- Cards ---------- */
+.cap-card {
+  background: var(--cap-surface);
+  border: 1px solid var(--cap-border);
+  border-radius: var(--cap-radius);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.cap-card:hover {
+  border-color: var(--cap-accent);
+}
+
+.cap-card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--cap-surface-alt);
+  color: var(--cap-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.cap-card-desc {
+  color: var(--cap-text-dim);
+  font-size: 0.92rem;
+}
+
+.cap-card-locked {
+  opacity: 0.65;
+}
+
+.cap-badge {
+  background: var(--cap-surface-alt);
+  color: var(--cap-accent);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.72rem;
+}
+
+.cap-badge-alt {
+  background: var(--cap-surface-alt);
+  color: var(--cap-accent-2);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.72rem;
+}
+
+.cap-badge-success {
+  background: rgba(31, 157, 85, 0.15);
+  color: var(--cap-success);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.72rem;
+}
+
+/* ---------- Progress ---------- */
+.cap-progress {
+  height: 8px;
+  background: var(--cap-surface-alt);
+  border-radius: 999px;
+}
+.cap-progress .progress-bar {
+  background: var(--cap-accent);
+  border-radius: 999px;
+}
+
+/* ---------- Search ---------- */
+.cap-search-wrapper {
+  position: relative;
+}
+.cap-search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--cap-surface);
+  border: 1px solid var(--cap-border);
+  border-radius: var(--cap-radius);
+  box-shadow: var(--cap-shadow);
+  z-index: 50;
+  max-height: 320px;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+.cap-search-result {
+  display: block;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  color: var(--cap-text);
+  text-decoration: none;
+}
+.cap-search-result:hover {
+  background: var(--cap-surface-alt);
+}
+
+/* ---------- Flashcards ---------- */
+.cap-flashcard {
+  perspective: 1200px;
+  height: 220px;
+  cursor: pointer;
+}
+.cap-flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+.cap-flashcard.is-flipped .cap-flashcard-inner {
+  transform: rotateY(180deg);
+}
+.cap-flashcard-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--cap-radius);
+  border: 1px solid var(--cap-border);
+  background: var(--cap-surface);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.cap-flashcard-back {
+  transform: rotateY(180deg);
+  background: var(--cap-surface-alt);
+}
+.cap-flashcard-label {
+  font-family: var(--cap-font-mono);
+  font-size: 0.7rem;
+  color: var(--cap-accent-2);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.cap-flashcard-hint {
+  font-size: 0.72rem;
+  color: var(--cap-text-dim);
+  margin-top: 0.75rem;
+}
+
+/* ---------- Quiz / challenge options ---------- */
+.cap-quiz-option {
+  background: var(--cap-surface);
+  border: 1px solid var(--cap-border);
+  color: var(--cap-text);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+}
+.cap-quiz-option:hover {
+  border-color: var(--cap-accent);
+}
+.cap-quiz-option.is-selected {
+  border-color: var(--cap-accent);
+  background: var(--cap-surface-alt);
+}
+
+.cap-result-icon {
+  font-size: 3.5rem;
+}
+
+.cap-challenge-item {
+  background: var(--cap-surface-alt);
+  border-radius: var(--cap-radius);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+.cap-challenge-item.is-completed {
+  border: 1px solid var(--cap-success);
+}
+
+/* ---------- Compiler ---------- */
+.cap-editor-panel textarea {
+  font-family: var(--cap-font-mono);
+  font-size: 0.85rem;
+  background: var(--cap-surface);
+  color: var(--cap-text);
+  border: 1px solid var(--cap-border);
+  border-radius: 10px;
+  min-height: 140px;
+  width: 100%;
+  padding: 0.75rem;
+  resize: vertical;
+}
+.cap-editor-preview {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border: 1px solid var(--cap-border);
+  border-radius: var(--cap-radius);
+  background: #ffffff;
+}
+
+/* ---------- Certificate ---------- */
+.cap-certificate {
+  background: var(--cap-surface);
+  border: 3px double var(--cap-accent);
+  border-radius: var(--cap-radius);
+  padding: clamp(2rem, 6vw, 4rem);
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+}
+.cap-cert-brand {
+  font-family: var(--cap-font-mono);
+  color: var(--cap-accent-2);
+  letter-spacing: 0.05em;
+}
+.cap-cert-title {
+  font-size: 1.8rem;
+  margin: 0.5rem 0 1.5rem;
+}
+.cap-cert-line {
+  color: var(--cap-text-dim);
+  margin-bottom: 0.25rem;
+}
+.cap-cert-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cap-accent);
+  margin-bottom: 0.75rem;
+}
+.cap-cert-course {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.cap-cert-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-family: var(--cap-font-mono);
+  font-size: 0.85rem;
+  color: var(--cap-text-dim);
+}
+
+/* ---------- Empty states ---------- */
+.cap-empty-state i {
+  font-size: 2.2rem;
+  color: var(--cap-text-dim);
+}
+
+.cap-plain-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+}
+.cap-plain-list li {
+  padding: 0.25rem 0;
+  color: var(--cap-text-dim);
+  font-size: 0.9rem;
+}
+.cap-plain-list li::before {
+  content: '→ ';
+  color: var(--cap-accent);
+}
+
+.cap-fav-btn {
+  border: none;
+  background: transparent;
+  color: var(--cap-danger);
+  font-size: 1rem;
+}
+
+/* ---------- Footer ---------- */
+.cap-footer {
+  border-top: 1px solid var(--cap-border);
+  padding: 2rem 0;
+  color: var(--cap-text-dim);
+  font-size: 0.9rem;
+}
+
+/* ---------- Print ---------- */
+@media print {
+  .cap-navbar, .cap-footer, .no-print, .cap-btn-primary, .cap-btn-outline, .btn {
+    display: none !important;
+  }
+  .cap-certificate {
+    box-shadow: none;
+    border: 2px solid #000;
+    margin: 0 auto;
+  }
+  body {
+    background: #fff;
+  }
+}

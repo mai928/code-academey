@@ -1,0 +1,40 @@
+/* themes.css
+   Design tokens. A coding-education product reads naturally in a dark,
+   editor-like palette with a violet/amber accent pair pulled from syntax
+   highlighting — not a generic SaaS card kit. Light mode is a genuine
+   second theme, not just an inverted dark mode. */
+
+:root,
+[data-theme='light'] {
+  --cap-bg: #f6f5fb;
+  --cap-surface: #ffffff;
+  --cap-surface-alt: #eeecf8;
+  --cap-border: #e0deee;
+  --cap-text: #17181f;
+  --cap-text-dim: #5b5d70;
+  --cap-accent: #6c5ce7;
+  --cap-accent-dark: #5443c9;
+  --cap-accent-2: #e08a2c;
+  --cap-success: #1f9d55;
+  --cap-danger: #d64545;
+  --cap-radius: 14px;
+  --cap-shadow: 0 1px 2px rgba(23, 24, 31, 0.06), 0 8px 24px rgba(23, 24, 31, 0.05);
+  --cap-font-display: 'Sora', sans-serif;
+  --cap-font-body: 'Inter', sans-serif;
+  --cap-font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-theme='dark'] {
+  --cap-bg: #0f1016;
+  --cap-surface: #171825;
+  --cap-surface-alt: #1e2032;
+  --cap-border: #2b2d42;
+  --cap-text: #edecf7;
+  --cap-text-dim: #a3a4bd;
+  --cap-accent: #8b7ffb;
+  --cap-accent-dark: #a99bff;
+  --cap-accent-2: #ffb347;
+  --cap-success: #4ade80;
+  --cap-danger: #ff8080;
+  --cap-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+}
